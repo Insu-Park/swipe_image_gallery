@@ -75,7 +75,7 @@ class SwipeImageGallery {
     this.itemCount,
     this.hideStatusBar = true,
     this.initialIndex = 0,
-    this.backgroundColor = Colors.black,
+    this.backgroundColor = Colors.transparent,
     this.dismissDragDistance = 160,
     this.transitionDuration = 400,
     this.hideOverlayOnTap = true,
