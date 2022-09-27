@@ -28,10 +28,7 @@ class CustomKeyboardListener extends StatelessWidget {
         curve: Curves.linear,
       );
     } else if (event.logicalKey == LogicalKeyboardKey.escape) {
-      Navigator.of(
-        context,
-        rootNavigator: true,
-      ).pop();
+      Navigator.of(context).maybePop();
     }
   }
 
