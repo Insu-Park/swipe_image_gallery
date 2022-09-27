@@ -79,15 +79,8 @@ class _GalleryState extends State<Gallery> {
             controller: controller,
             onPageChanged: widget.onSwipe,
             itemBuilder: (context, index) {
-              return InteractivePage(
-                child: widget.children?[index] ??
-                    widget.itemBuilder!(context, index),
-                setScrollEnabled: (bool enabled) =>
-                    setState(() => _scrollEnabled = enabled),
-                setBackgroundOpacity: widget.setBackgroundOpacity,
-                dismissDragDistance: widget.dismissDragDistance,
-                heroProperties: widget.heroProperties?[index] ?? null,
-              );
+              return widget.children?[index] ??
+                  widget.itemBuilder!(context, index);
             },
             itemCount: widget.children?.length ?? widget.itemCount,
             physics: _scrollEnabled
