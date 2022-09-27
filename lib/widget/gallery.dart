@@ -73,6 +73,7 @@ class _GalleryState extends State<Gallery> {
       color: widget.backgroundColor.withOpacity(widget.opacity),
       child: SafeArea(
         child: CustomKeyboardListener(
+          context: context,
           controller: controller,
           child: PageView.builder(
             controller: controller,

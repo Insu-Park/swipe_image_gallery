@@ -9,23 +9,26 @@ class CustomKeyboardListener extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.child,
+    required this.context,
   }) : super(key: key);
   final PageController controller;
   final Widget child;
-
+  final BuildContext context;
   final FocusNode _focusNode = FocusNode();
 
   void _handleKeyEvent(RawKeyEvent event) {
     if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
       controller.nextPage(
-        duration: Duration(milliseconds: 400),
+        duration: Duration(milliseconds: 200),
         curve: Curves.linear,
       );
     } else if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
       controller.previousPage(
-        duration: Duration(milliseconds: 400),
+        duration: Duration(milliseconds: 200),
         curve: Curves.linear,
       );
+    } else if (event.logicalKey == LogicalKeyboardKey.escape) {
+      Navigator.pop(context);
     }
   }
 
